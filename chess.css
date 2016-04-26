@@ -1,24 +1,6 @@
-#boardContainer {
-
-	display: inline-block;
-
-
-}
-
-.square {
-
-	display: inline-block;
-	vertical-align: top; /* without this, there's a weird space between each row */
-	width: 50px;
-	height: 50px;
-}
-
-.dark {
-	background-color: blue;
-}
-.light {
-	background-color: white;
-}
-.selected {
-	background-color: red;
+#slider {
+  margin-left: 200px;
+  margin-right: 200px;
+  margin-top: 50px;
+  margin-bottom: 0px;
 }
