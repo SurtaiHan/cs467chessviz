@@ -1,3 +1,5 @@
+var show = function(move) {};
+
 $(document).ready(function() {
     var value  = 0;
     var slider = d3.slider();
@@ -8,7 +10,7 @@ $(document).ready(function() {
             return;
         }
         value = next;
-        console.log(value);
+        show(value);
     });
     d3.select('#slider').call(slider);
 });

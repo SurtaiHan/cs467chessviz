@@ -1,3 +1,19 @@
+var codes = {
+    "None":         "",
+    "White King":   "\u2654",
+    "White Queen":  "\u2655",
+    "White Rook":   "\u2656",
+    "White Bishop": "\u2657",
+    "White Knight": "\u2658",
+    "White Pawn":   "\u2659",
+    "Black King":   "\u265A",
+    "Black Queen":  "\u265B",
+    "Black Rook":   "\u265C",
+    "Black Bishop": "\u265D",
+    "Black Knight": "\u265E",
+    "Black Pawn":   "\u265F",
+};
+
 var pieces = {
     NONE :          {name: "None",          code: " "},
     WHITE_KING :    {name: "White King",    code: "\u2654"},
@@ -5,13 +21,13 @@ var pieces = {
     WHITE_ROOK :    {name: "White Rook",    code: "\u2656"},
     WHITE_BISHOP :  {name: "White Bishop",  code: "\u2657"},
     WHITE_KNIGHT :  {name: "White Knight",  code: "\u2658"},
-    WHITE_PAWN :    {name: "White Pown",    code: "\u2659"},
+    WHITE_PAWN :    {name: "White Pawn",    code: "\u2659"},
     BLACK_KING :    {name: "Black King",    code: "\u265A"},
     BLACK_QUEEN :   {name: "Black Queen",   code: "\u265B"},
     BLACK_ROOK :    {name: "Black Rook",    code: "\u265C"},
     BLACK_BISHOP :  {name: "Black Bishop",  code: "\u265D"},
     BLACK_KNIGHT :  {name: "Black Knight",  code: "\u265E"},
-    BLACK_PAWN :    {name: "Black Pown",    code: "\u265F"},
+    BLACK_PAWN :    {name: "Black Pawn",    code: "\u265F"},
 };
 var marginTop = 0,
     marginLeft = 30,
@@ -25,6 +41,8 @@ for (var i = 0; i < boardDimension*boardDimension; i++) {
     board.push({
         x: i % boardDimension,
         y: Math.floor(i / boardDimension),
+        xorig: i % boardDimension,
+        yorig: Math.floor(i / boardDimension),
         piece: pieces.NONE
     });
 };
