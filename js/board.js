@@ -41,8 +41,6 @@ for (var i = 0; i < boardDimension*boardDimension; i++) {
     board.push({
         x: i % boardDimension,
         y: Math.floor(i / boardDimension),
-        xorig: i % boardDimension,
-        yorig: Math.floor(i / boardDimension),
         piece: pieces.NONE
     });
 };

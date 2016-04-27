@@ -1,5 +1,3 @@
-var selected = ["Black Knight", "White Pawn"];
-
 $(document).ready(function() {
     var div = d3.select("body")
         .append("div")
@@ -73,49 +71,22 @@ $(document).ready(function() {
     };
 
     show = function(move) {
-        var data = [
-            [
-                {
-                    name: "Black Knight",
-                    x: 3,
-                    y: 3,
-                    moves: [
-                        {
-                            x: 4,
-                            y: 1,
-                            weight: 0.9
-                        },
-                        {
-                            x: 1,
-                            y: 4,
-                            weight: 0.3
-                        }
-                    ]
-                }
-            ],
-            [
-                {
-                    name: "Black Knight",
-                    x: 4,
-                    y: 1,
-                    moves: [
-                        {
-                            x: 6,
-                            y: 2,
-                            weight: 0.9
-                        },
-                        {
-                            x: 2,
-                            y: 0,
-                            weight: 0.3
-                        }
-                    ]
-                }
-            ]
-        ];
+        var selected = selection
+            .filter(function(s) {
+                return s.selected;
+            })
+            .map(function(s) {
+                return s.piece.name;
+            });
+        if (stats[move].filter(function(m) {
+            return selected.includes(m.name);
+        }).length === 0) {
+            move += 1;
+        }
         clear();
+        console.log(selected);
         fields
-            .data(data[move])
+            .data(stats[move])
             .enter()
             .append("text")
             .attr("x", function (d) {
@@ -133,7 +104,6 @@ $(document).ready(function() {
                     return "";
                 }
                 d.moves.forEach(function(move) {
-                    console.log(d);
                     svg
                         .append("line")
                         .attr("class", "arrow")
