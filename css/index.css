@@ -1,11 +1,10 @@
 #slider {
   margin-left: 200px;
   margin-right: 200px;
-  margin-top: 50px;
-  margin-bottom: 0px;
+  margin-top: 0px;
+  margin-bottom: -10px;
 }
 
 .arrow {
   stroke-width: 5;
-  stroke: #000;
 }

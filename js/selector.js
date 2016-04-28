@@ -31,8 +31,8 @@ $(document).ready(function() {
         .append("div")
         .style("display", "block")
         .style("margin", "auto")
-        .style("margin-bottom", "30px")
-        .style("margin-top", marginTop + "px")
+        .style("margin-bottom", "20px")
+        .style("margin-top", "0px")
         .style("width", 6 * selectFieldSize + "px")
         .style("height", 2 * selectFieldSize + "px");
 
@@ -81,6 +81,17 @@ $(document).ready(function() {
             .attr("dx", "24px")
             .attr("opacity", function(d) {
                 return d.selected ? 1 : 0.5;
+            })
+            .style("stroke-width", "2px")
+            .style("stroke", function(d) {
+                return d.piece.name.startsWith("White")
+                    ? "black"
+                    : "none";
+            })
+            .attr("fill", function(d) {
+                return d.piece.name.startsWith("White")
+                    ? "white"
+                    : "black";
             })
             .on("click", function(d) {
                 d.selected = !d.selected;
