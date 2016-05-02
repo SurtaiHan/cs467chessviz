@@ -137,6 +137,49 @@ $(document).ready(function() {
 
     var occupied = {};
 
+    var coords = function() {
+        var xs = [];
+        var ys = []
+        for (var i = 0; i < 8; ++i) {
+            xs.push({x: i, y: 0, text: String.fromCharCode(i + 65)});
+            ys.push({y: i, x: 0, text: String(i + 1)});
+        }
+        fields
+            .data(ys)
+            .enter()
+            .append("text")
+            .attr("x", function (d) {
+                return d.x * fieldSize;
+            })
+            .attr("y", function (d) {
+                return d.y * fieldSize + fieldSize - 15;
+            })
+            .style("font-size", "14")
+            .attr("text-anchor", "middle")
+            .attr("dy", "10px")
+            .attr("dx", "5px")
+            .text(function (d) {
+                return d.text;
+            });
+        fields
+            .data(xs)
+            .enter()
+            .append("text")
+            .attr("x", function (d) {
+                return d.x * fieldSize;
+            })
+            .attr("y", function (d) {
+                return d.y * fieldSize;
+            })
+            .style("font-size", "14")
+            .attr("text-anchor", "middle")
+            .attr("dy", "15px")
+            .attr("dx", "8px")
+            .text(function (d) {
+                return d.text;
+            });
+    };
+
     show = function(move) {
         var selected = selection
             .filter(function(s) {
@@ -152,7 +195,7 @@ $(document).ready(function() {
         }
         var moves = stats[move].concat(stats[move + 1]);
         clear();
-        console.log(selected);
+        coords();
         fields
             .data(moves)
             .enter()

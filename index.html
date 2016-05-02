@@ -8,11 +8,17 @@
   <body>
     <h1 style="margin:0;text-align:center">Chessdrive</h1>
     <hr />
-    <p style="margin:400px;margin-top:0;margin-bottom:0">
-    Drag the slider to progress throughout the game. Click on the pieces in the selector
+    <p style="margin:20%;margin-top:0;margin-bottom:0">
+    Note: if you resize the window, please refresh the page.
+    <br />
+    <br />
+    The slider indicates which turn you are viewing. Drag the slider to progress throughout the game.
+    Click on the pieces in the selector
     to toggle them on the board. The color of the arrows represents how popular that move is;
-    red = more popular, green = less popular, white = in-between. Game data taken from FICS
-    with ratings > 2000.</p>
+    red = more popular, green = less popular, white = in-between (the color scheme is inspired by
+    typical heatmap colors). Game data taken from FICS (the de-facto chess server where almost
+    all professionals play casually) with ratings > 2000 (candidate masters and above).
+    Moves shown are only those which have been played > 200 times at the selected turn.</p>
     <hr />
     <div id="slider"></div>
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
